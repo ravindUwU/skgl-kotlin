@@ -11,18 +11,24 @@ internal object SerialKeyHelpers {
 	 * `SKGL.methods._decrypt`, `SKGL.methods._decText`
 	 */
 	fun decode(key: String, secret: String): String {
+
 		val info = MathHelpers.base26To10(key).toString()
 
-		val slice = info.substring(9)
-		val secretHash25 = MathHelpers.hash25(secret)
+		return if (secret.isEmpty()) {
+			info
 
-		var decodedSlice = ""
-		for (i in slice.indices) {
-			val n = slice[i].toString().toInt() - secretHash25[MathHelpers.modulo(i, secretHash25.length)].toString().toInt()
-			decodedSlice += MathHelpers.modulo10(n).toString()
+		} else {
+			val slice = info.substring(9)
+			val secretHash25 = MathHelpers.hash25(secret)
+
+			var decodedSlice = ""
+			for (i in slice.indices) {
+				val n = slice[i].toString().toInt() - secretHash25[MathHelpers.modulo(i, secretHash25.length)].toString().toInt()
+				decodedSlice += MathHelpers.modulo10(n).toString()
+			}
+
+			return info.take(9) + decodedSlice
 		}
-
-		return info.take(9) + decodedSlice
 	}
 
 	/**
@@ -43,16 +49,25 @@ internal object SerialKeyHelpers {
 		result += r
 
 		val resultHash = MathHelpers.hash8(result.toString())
-		val secretHash = MathHelpers.hash25(secret)
 
-		val sliceBuilder = StringBuilder()
-		val resultString = result.toString()
-		for (i in resultString.indices) {
-			val resultPart = resultString[i].toString().toInt()
-			val secretPart = secretHash[MathHelpers.modulo(i, secretHash.length)].toString().toInt()
-			sliceBuilder.append(MathHelpers.modulo10(resultPart + secretPart))
-		}
+		return MathHelpers.base10To26((
 
-		return MathHelpers.base10To26((resultHash + sliceBuilder.toString()).toBigInteger())
+			if (secret.isEmpty()) {
+				resultHash + result.toString()
+
+			} else {
+				val secretHash = MathHelpers.hash25(secret)
+
+				val sliceBuilder = StringBuilder()
+				val resultString = result.toString()
+				for (i in resultString.indices) {
+					val resultPart = resultString[i].toString().toInt()
+					val secretPart = secretHash[MathHelpers.modulo(i, secretHash.length)].toString().toInt()
+					sliceBuilder.append(MathHelpers.modulo10(resultPart + secretPart))
+				}
+				resultHash + sliceBuilder.toString()
+			}
+
+		).toBigInteger())
 	}
 }

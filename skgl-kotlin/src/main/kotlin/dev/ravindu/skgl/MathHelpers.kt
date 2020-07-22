@@ -63,6 +63,11 @@ internal object MathHelpers {
 	 * `SKGL.methods.twentyfiveByteHash`
 	 */
 	fun hash25(s: String): String {
+
+		if (s.isEmpty()) {
+			throw IllegalArgumentException("String to be hashed is empty.")
+		}
+
 		val nBlocks = s.length / 5
 		var hash = ""
 		if (s.length <= 5) {
@@ -86,6 +91,11 @@ internal object MathHelpers {
 	 * `SKGL.methods.getEightByteHash`
 	 */
 	fun hash8(s: String, exclusiveUpperLimit: Long = 1_000_000_000): String {
+
+		if (s.isEmpty()) {
+			throw IllegalArgumentException("String to be hashed is empty.")
+		}
+
 		var hash = 0
 
 		val buf = Charsets.UTF_16LE.encode(s)

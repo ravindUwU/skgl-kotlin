@@ -11,5 +11,6 @@ class AppView: View(Constants.TITLE) {
 
 		tab<AboutView>()
 		tab<GenerateView>()
+		tab<ValidateView>()
 	}
 }

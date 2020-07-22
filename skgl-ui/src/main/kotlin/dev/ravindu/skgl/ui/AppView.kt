@@ -4,10 +4,12 @@ import javafx.scene.control.TabPane
 import tornadofx.View
 import tornadofx.tabpane
 
-class AppView: View("SKGL (Kotlin) UI") {
+class AppView: View(Constants.TITLE) {
 
 	override val root = tabpane {
 		tabClosingPolicy = TabPane.TabClosingPolicy.UNAVAILABLE
+
+		tab<AboutView>()
 		tab<GenerateView>()
 	}
 }

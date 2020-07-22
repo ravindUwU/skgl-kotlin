@@ -1,3 +1,5 @@
+import org.gradle.api.file.DuplicatesStrategy
+
 plugins {
 	kotlin("jvm")
 }
@@ -14,5 +16,6 @@ tasks.withType<Jar> {
 	}
 
 	// Include all dependencies in the executable archive.
+	duplicatesStrategy = DuplicatesStrategy.INCLUDE
 	from(configurations["runtimeClasspath"].map { if (it.isDirectory) it else zipTree(it) })
 }

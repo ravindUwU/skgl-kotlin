@@ -128,7 +128,7 @@ class SerialKey : SerialKeyData {
 		 *     duration = 45
 		 *     features = setOf(1, 3, 5)
 		 *     // createdOn = LocalDate.now()
-		 *     // chucked = true
+		 *     // chunked = true
 		 * }
 		 * ```
 		 */

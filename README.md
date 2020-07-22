@@ -33,3 +33,16 @@ val hasFeature1 = 1 in key.features
 val isExpired = key.calculateIsExpired()
 val daysLeft = key.calculateDaysLeft()
 ```
+
+<br>
+
+## UI Usage
+
+The [TornadoFX](https://tornadofx.io/)-powered [skgl-ui](skgl-ui) project can be used to generate or validate keys,
+
+![About](images/ui-about.png)
+
+![Generate](images/ui-generate.png)
+
+![Validate](images/ui-validate.png)
+

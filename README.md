@@ -1,6 +1,6 @@
 # SKGL (Kotlin)
 
-The [SKGL](https://github.com/Cryptolens/SKGL) library, written in Kotlin, with a shiny new API. Use this to generate & validate human readable, 20-character serial keys.
+The [SKGL](https://github.com/Cryptolens/SKGL) library, written in Kotlin, with a shiny new API. Use this to generate & validate human readable, 20-character serial keys with up to 8 features embedded.
 
 **Please note: this library is still a work-in-progress.**
 

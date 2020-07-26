@@ -65,11 +65,6 @@ class SerialKey : SerialKeyData {
 		this.features = features
 	}
 
-	/**
-	 * Thrown when a [SerialKey] is constructed with an invalid key/secret.
-	 */
-	class InvalidSerialKeyException(key: String): Exception("The specified key \"$key\" is invalid.")
-
 	override fun toString(): String {
 		return "SerialKey(" +
 			"key='$text', " +
@@ -82,6 +77,11 @@ class SerialKey : SerialKeyData {
 	override fun equals(other: Any?): Boolean = other is SerialKey && other.text == text
 
 	override fun hashCode(): Int = text.hashCode()
+
+	/**
+	 * Thrown when a [SerialKey] is constructed with an invalid key/secret.
+	 */
+	class InvalidSerialKeyException(val key: String): Exception("The specified key is invalid.")
 
 	/**
 	 * Configuration for building a [SerialKey] via [SerialKey.build].

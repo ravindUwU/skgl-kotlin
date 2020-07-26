@@ -31,7 +31,7 @@ class ValidateController: Controller() {
 			durationProperty.value = serial.duration
 			createdOnProperty.value = serial.createdOn
 			expiresOnProperty.value = serial.expiresOn
-			daysLeftProperty.value = serial.calculateDaysLeft().toInt()
+			daysLeftProperty.value = serial.calculateDaysLeft()
 			isExpiredProperty.value = serial.calculateIsExpired()
 
 			featuresProperty.clear()

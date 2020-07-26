@@ -35,5 +35,5 @@ interface SerialKeyData {
 	 * Calculates the number of days remaining until the serial key expires, relative to the specified date [relativeTo]
 	 * (defaults to the current date).
 	 */
-	fun calculateDaysLeft(relativeTo: LocalDate = LocalDate.now()) = relativeTo.until(expiresOn, ChronoUnit.DAYS)
+	fun calculateDaysLeft(relativeTo: LocalDate = LocalDate.now()) = relativeTo.until(expiresOn, ChronoUnit.DAYS).toInt()
 }

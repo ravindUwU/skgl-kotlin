@@ -8,7 +8,7 @@ class SkglUiApp: App(AppView::class) {
 
 	override fun start(stage: Stage) {
 		stage.apply {
-			isResizable = false
+			isResizable = true
 		}
 		super.start(stage)
 	}

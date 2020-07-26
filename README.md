@@ -36,7 +36,7 @@ val daysLeft = key.calculateDaysLeft()
 
 <br>
 
-## UI Usage
+## UI
 
 The [TornadoFX](https://tornadofx.io/)-powered [skgl-ui](skgl-ui) project can be used to generate or validate keys,
 

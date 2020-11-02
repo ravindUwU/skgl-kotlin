@@ -8,8 +8,6 @@ The [SKGL](https://github.com/Cryptolens/SKGL) library, written in Kotlin, with 
 
 ## Usage
 
-Please refer to [`sandbox/Program.kt`](sandbox/src/main/kotlin/com/example/program/Program.kt) for more examples.
-
 ### Generate a Key
 
 ```kotlin
@@ -45,4 +43,3 @@ The [TornadoFX](https://tornadofx.io/)-powered [skgl-ui](skgl-ui) project can be
 ![Generate](images/ui-generate.png)
 
 ![Validate](images/ui-validate.png)
-

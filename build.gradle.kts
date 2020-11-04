@@ -12,8 +12,8 @@ allprojects {
 }
 
 subprojects {
-	group = "dev.ravindu.skgl-kotlin"
-	version = "0.1.0"
+	group = "dev.ravindu"
+	version = "1.0.0"
 
 	tasks.withType<KotlinCompile> {
 		kotlinOptions {

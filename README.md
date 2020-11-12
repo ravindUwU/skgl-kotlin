@@ -1,12 +1,23 @@
-# SKGL (Kotlin)
+<h1>
+	SKGL (Kotlin)
+	<a href="https://search.maven.org/artifact/dev.ravindu/skgl-kotlin">
+		<img src="https://img.shields.io/maven-central/v/dev.ravindu/skgl-kotlin">
+	</a>
+	<a href="LICENSE">
+		<img src="https://img.shields.io/github/license/RavinduL/skgl-kotlin">
+	</a>
+</h1>
 
-The [SKGL](https://github.com/Cryptolens/SKGL) library, written in Kotlin, with a shiny new API. Use this to generate & validate human readable, 20-character serial keys with up to 8 features embedded.
-
-**Please note: this library is still a work-in-progress.**
+The [SKGL](https://github.com/Cryptolens/SKGL) library, written in Kotlin, with a shiny new API. Use this to generate &
+validate human readable, 20-character serial keys with up to 8 features embedded.
 
 <br>
 
 ## Usage
+
+```kotlin
+import dev.ravindu.skgl.SerialKey
+```
 
 ### Generate a Key
 

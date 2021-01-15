@@ -5,9 +5,9 @@ plugins {
 }
 
 dependencies {
-	implementation(kotlin("stdlib-jdk8"))
 	implementation(project(":skgl-kotlin"))
 	implementation("no.tornado:tornadofx:1.7.20")
+	implementation("org.jetbrains.kotlin:kotlin-reflect:1.4.21")
 }
 
 tasks.withType<Jar> {

@@ -8,10 +8,6 @@ plugins {
 	id("org.jetbrains.dokka") version "1.4.10.2"
 }
 
-dependencies {
-	implementation(kotlin("stdlib-jdk8"))
-}
-
 java {
 	withSourcesJar()
 }

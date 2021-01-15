@@ -29,7 +29,7 @@ class SerialKey : SerialKeyData {
 	constructor(key: String, secret: String) {
 
 		if (!key.matches(Regex("[a-z]{5}-?[a-z]{5}-?[a-z]{5}-?[a-z]{5}", RegexOption.IGNORE_CASE))) {
-			throw IllegalArgumentException("Invalid key format.")
+			throw InvalidSerialKeyException(key)
 		}
 
 		val leanKey = key.replace("-", "").toUpperCase()
